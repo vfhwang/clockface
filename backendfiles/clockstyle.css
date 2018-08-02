@@ -1,0 +1,849 @@
+/* http://meyerweb.com/eric/tools/css/reset/
+   v2.0 | 20110126
+   License: none (public domain)
+*/
+
+html, body, div, span, applet, object, iframe,
+h1, h2, h3, h4, h5, h6, p, blockquote, pre,
+a, abbr, acronym, address, big, cite, code,
+del, dfn, em, img, ins, kbd, q, s, samp,
+small, strike, strong, sub, sup, tt, var,
+b, u, i, center,
+dl, dt, dd, ol, ul, li,
+fieldset, form, label, legend,
+table, caption, tbody, tfoot, thead, tr, th, td,
+article, aside, canvas, details, embed,
+figure, figcaption, footer, header, hgroup,
+menu, nav, output, ruby, section, summary,
+time, mark, audio, video {
+	margin: 0;
+	padding: 0;
+	border: 0;
+	font-size: 100%;
+	font: inherit;
+	vertical-align: baseline;
+  box-sizing: border-box;
+}
+
+
+
+/* HTML5 display-role reset for older browsers */
+article, aside, details, figcaption, figure,
+footer, header, hgroup, menu, nav, section {
+	display: block;
+}
+body {
+	line-height: 1;
+}
+ol, ul {
+	list-style: none;
+}
+blockquote, q {
+	quotes: none;
+}
+blockquote:before, blockquote:after,
+q:before, q:after {
+	content: '';
+	content: none;
+}
+table {
+	border-collapse: collapse;
+	border-spacing: 0;
+}
+
+body {
+  background-color:#fff;
+  font-family:'Helvetica Neue','Helvetica','Arial',sans-serif;
+}
+
+.question, .boygirl, .spin, .xxx, .boygirlfake, .questionfake {
+	text-transform: uppercase;
+	padding:40px;
+  font-size:6em;
+	font-family:'Helvetica Neue','Helvetica','Arial',sans-serif;
+  font-weight:400;
+  position:absolute;
+	left:1%;
+	z-index:5;
+}
+
+ .boygirl, .boygirlfake {
+	top:inherit;
+  bottom:1%;
+}
+
+
+.spin, .xxx{
+ top:inherit;
+ left:inherit;
+ bottom:1%;
+ right:1%;
+ letter-spacing: -8;
+}
+
+.xxx{
+	font-size:8em;
+}
+
+
+a{
+	font-family:'Helvetica Neue','Helvetica','Arial',sans-serif;
+  text-decoration:none;
+  color:#000;
+}
+
+a:hover{
+  text-decoration:none;
+  color:#ff0000;
+}
+
+.spinbox {
+	z-index:6;
+	position:fixed;
+	width:100%;
+	height:100%;
+	display:none;
+	background-color:rgba(255, 255, 255, 1);
+}
+
+
+
+.lines {
+	position:fixed;
+	width:84%;
+	height:84%;
+	top:8%;
+	left:8%;
+	transform: translateY(-4%);
+	z-index: 10;
+}
+
+@media all and (max-width:600px) {
+	.lines{
+		display:none;
+	}
+}
+
+.line{
+	position:absolute;
+	left:50%;
+	height:100%;
+	width:6px;
+}
+
+.line1{
+	transform:rotate(0deg);
+}
+
+.line2{
+	transform:rotate(30deg);
+}
+
+.line3{
+	transform:rotate(60deg);
+}
+.line4{
+	transform:rotate(90deg);
+}
+.line5{
+	transform:rotate(120deg);
+}
+.line6{
+	transform:rotate(150deg);
+}
+
+.digitdash{
+	background-color: #000;
+	height:5%;
+}
+
+.digitdashb{
+	background-color: rgba(255,255,255,0);
+	height:90%;
+}
+
+video{
+	z-index:3;
+	justify-content: center;
+	align-items: center;
+	position:fixed;
+	top:10%;
+	left:10%
+}
+
+.explain {
+  z-index:100;
+  position:fixed;
+  width:100%;
+  height:100%;
+	display:none;
+ }
+
+.explain .one{
+	font-size:6vh;
+	height:50%;
+	margin: 0;
+  display: flex;
+	background-color:rgba(200, 200, 200, 0);
+  justify-content: center; /* align horizontal */
+  align-items: center; /* align vertical */
+	transform:translateY(35%);
+
+  }
+
+.explain p{
+	text-transform: uppercase;
+	font-weight:800;
+	background-color: #fff;
+	padding:8px 12px;
+	color:#000;
+}
+
+
+.explain .two{
+	font-size:6vh;
+  height:50%;
+	margin: 0vw;
+  display: flex;
+	background-color:rgba(200, 200, 200, 0);
+  justify-content: center; /* align horizontal */
+  align-items: center; /* align vertical */
+	transform:translateY(-24%);
+}
+
+.explain .credit{
+	font-size:3vh;
+	height:50%;
+	margin: 0vw;
+  display: flex;
+	background-color:rgba(200, 200, 200, 0);
+  justify-content: center; /* align horizontal */
+  align-items: center; /* align vertical */
+	transform:translateY(-95%);
+	z-index: 100;
+}
+
+
+
+	.explainvisible {
+		display:block;
+	}
+
+.face {
+	position:absolute;
+	/*max-width:900px;*/
+	margin:0 auto;
+}
+
+
+
+.eyes {
+  position:fixed;
+  top:10%;
+  left:0;
+	width:100%;
+  height:40%;
+	overflow:hidden;
+  background-size:contain;
+	background-repeat:no-repeat;
+	background-position:center;
+  z-index:-999;
+}
+
+.tongue {
+  position:fixed;
+  bottom:11%;
+  left:0;
+	width:100%;
+  height:40%;
+	overflow:hidden;
+  background-size:contain;
+	background-repeat:no-repeat;
+	background-position: center;
+  z-index:-999;
+}
+
+.tongue12 {
+  background-image:url(images/tongue/t12.png);
+}
+
+.tongue11 {
+  background-image:url(images/tongue/t11.png);
+}
+
+.tongue10 {
+  background-image:url(images/tongue/t10.png);
+}
+
+.tongue9 {
+  background-image:url(images/tongue/t9.png);
+}
+
+.tongue8 {
+  background-image:url(images/tongue/t8.png);
+}
+
+
+.tongue7 {
+  background-image:url(images/tongue/t7.png);
+}
+
+.tongue6 {
+  background-image:url(images/tongue/t6.png);
+}
+
+.tongue5 {
+  background-image:url(images/tongue/t5.png);
+}
+
+.tongue4 {
+  background-image:url(images/tongue/t4.png);
+}
+
+.tongue3 {
+  background-image:url(images/tongue/t3.png);
+}
+
+.tongue2 {
+  background-image:url(images/tongue/t2.png);
+}
+
+.tongue1 {
+  background-image:url(images/tongue/t1.png);
+}
+
+
+.eyes1 {
+  background-image:url(images/eyes/e1.png);
+}
+
+.eyes2 {
+  background-image:url(images/eyes/e2.png);
+}
+
+.eyes3 {
+  background-image:url(images/eyes/e3.png);
+}
+
+.eyes4 {
+  background-image:url(images/eyes/e4.png);
+}
+
+.eyes5 {
+  background-image:url(images/eyes/e5.png);
+}
+
+.eyes6 {
+  background-image:url(images/eyes/e6.png);
+}
+
+.eyes7 {
+  background-image:url(images/eyes/e7.png);
+}
+
+.eyes8 {
+  background-image:url(images/eyes/e8.png);
+}
+
+.eyes9 {
+  background-image:url(images/eyes/e9.png);
+}
+
+.eyes10 {
+  background-image:url(images/eyes/e10.png);
+}
+
+
+.eyes11 {
+  background-image:url(images/eyes/e11.png);
+}
+
+.eyes12 {
+  background-image:url(images/eyes/e12.png);
+}
+
+.eyes13 {
+  background-image:url(images/eyes/e13.png);
+}
+
+.eyes14 {
+  background-image:url(images/eyes/e14.png);
+}
+
+.eyes15 {
+  background-image:url(images/eyes/e15.png);
+}
+
+.eyes16 {
+  background-image:url(images/eyes/e16.png);
+}
+
+.eyes17 {
+  background-image:url(images/eyes/e17.png);
+}
+
+.eyes18 {
+  background-image:url(images/eyes/e18.png);
+}
+
+.eyes19 {
+  background-image:url(images/eyes/e19.png);
+}
+
+.eyes20 {
+  background-image:url(images/eyes/e20.png);
+}
+
+.eyes21 {
+  background-image:url(images/eyes/e21.png);
+}
+
+.eyes22 {
+  background-image:url(images/eyes/e22.png);
+}
+
+.eyes23 {
+  background-image:url(images/eyes/e23.png);
+}
+
+.eyes24 {
+  background-image:url(images/eyes/e24.png);
+}
+
+.eyes25 {
+  background-image:url(images/eyes/e25.png);
+}
+
+.eyes26 {
+  background-image:url(images/eyes/e26.png);
+}
+
+.eyes27 {
+  background-image:url(images/eyes/e27.png);
+}
+
+.eyes28 {
+  background-image:url(images/eyes/e28.png);
+}
+
+.eyes29 {
+  background-image:url(images/eyes/e29.png);
+}
+
+.eyes30 {
+  background-image:url(images/eyes/e30.png);
+}
+
+.eyes31 {
+  background-image:url(images/eyes/e31.png);
+}
+
+.eyes32 {
+  background-image:url(images/eyes/e32.png);
+}
+
+.eyes33 {
+  background-image:url(images/eyes/e33.png);
+}
+
+.eyes34 {
+  background-image:url(images/eyes/e34.png);
+}
+
+.eyes35 {
+  background-image:url(images/eyes/e35.png);
+}
+
+.eyes36 {
+  background-image:url(images/eyes/e36.png);
+}
+
+.eyes37 {
+  background-image:url(images/eyes/e37.png);
+}
+
+.eyes38 {
+  background-image:url(images/eyes/e38.png);
+}
+
+.eyes39 {
+  background-image:url(images/eyes/e39.png);
+}
+
+.eyes40 {
+  background-image:url(images/eyes/e40.png);
+}
+
+.eyes41 {
+  background-image:url(images/eyes/e41.png);
+}
+
+.eyes42 {
+  background-image:url(images/eyes/e42.png);
+}
+
+.eyes43 {
+  background-image:url(images/eyes/e43.png);
+}
+
+.eyes44 {
+  background-image:url(images/eyes/e44.png);
+}
+
+.eyes45 {
+  background-image:url(images/eyes/e45.png);
+}
+
+.eyes46 {
+  background-image:url(images/eyes/e46.png);
+}
+
+.eyes47 {
+  background-image:url(images/eyes/e47.png);
+}
+
+.eyes48 {
+  background-image:url(images/eyes/e48.png);
+}
+
+.eyes49 {
+  background-image:url(images/eyes/e49.png);
+}
+
+.eyes50 {
+  background-image:url(images/eyes/e50.png);
+}
+
+.eyes51 {
+  background-image:url(images/eyes/e51.png);
+}
+
+.eyes52 {
+  background-image:url(images/eyes/e52.png);
+}
+
+.eyes53 {
+  background-image:url(images/eyes/e53.png);
+}
+
+.eyes54 {
+  background-image:url(images/eyes/e54.png);
+}
+
+.eyes55 {
+  background-image:url(images/eyes/e55.png);
+}
+
+.eyes56 {
+  background-image:url(images/eyes/e56.png);
+}
+
+.eyes57 {
+  background-image:url(images/eyes/e57.png);
+}
+
+.eyes58 {
+  background-image:url(images/eyes/e58.png);
+}
+
+.eyes59 {
+  background-image:url(images/eyes/e59.png);
+}
+
+.eyes0 {
+  background-image:url(images/eyes/e0.png);
+}
+
+
+/*boyz*/
+
+.boyz.tongue12 {
+  background-image:url(images/boyztongue/t12.png);
+}
+
+.boyz.tongue11 {
+  background-image:url(images/boyztongue/t11.png);
+}
+
+.boyz.tongue10 {
+  background-image:url(images/boyztongue/t10.png);
+}
+
+.boyz.tongue9 {
+  background-image:url(images/boyztongue/t9.png);
+}
+
+.boyz.tongue8 {
+  background-image:url(images/boyztongue/t8.png);
+}
+
+
+.boyz.tongue7 {
+  background-image:url(images/boyztongue/t7.png);
+}
+
+.boyz.tongue6 {
+  background-image:url(images/boyztongue/t6.png);
+}
+
+.boyz.tongue5 {
+  background-image:url(images/boyztongue/t5.png);
+}
+
+.boyz.tongue4 {
+  background-image:url(images/boyztongue/t4.png);
+}
+
+.boyz.tongue3 {
+  background-image:url(images/boyztongue/t3.png);
+}
+
+.boyz.tongue2 {
+  background-image:url(images/boyztongue/t2.png);
+}
+
+.boyz.tongue1 {
+  background-image:url(images/boyztongue/t1.png);
+}
+
+
+.boyz.eyes1 {
+  background-image:url(images/boyzeyes/e1.png);
+}
+
+.boyz.eyes2 {
+  background-image:url(images/boyzeyes/e2.png);
+}
+
+.boyz.eyes3 {
+  background-image:url(images/boyzeyes/e3.png);
+}
+
+.boyz.eyes4 {
+  background-image:url(images/boyzeyes/e4.png);
+}
+
+.boyz.eyes5 {
+  background-image:url(images/boyzeyes/e5.png);
+}
+
+.boyz.eyes6 {
+  background-image:url(images/boyzeyes/e6.png);
+}
+
+.boyz.eyes7 {
+  background-image:url(images/boyzeyes/e7.png);
+}
+
+.boyz.eyes8 {
+  background-image:url(images/boyzeyes/e8.png);
+}
+
+.boyz.eyes9 {
+  background-image:url(images/boyzeyes/e9.png);
+}
+
+.boyz.eyes10 {
+  background-image:url(images/boyzeyes/e10.png);
+}
+
+
+.boyz.eyes11 {
+  background-image:url(images/boyzeyes/e11.png);
+}
+
+.boyz.eyes12 {
+  background-image:url(images/boyzeyes/e12.png);
+}
+
+.boyz.eyes13 {
+  background-image:url(images/boyzeyes/e13.png);
+}
+
+.boyz.eyes14 {
+  background-image:url(images/boyzeyes/e14.png);
+}
+
+.boyz.eyes15 {
+  background-image:url(images/boyzeyes/e15.png);
+}
+
+.boyz.eyes16 {
+  background-image:url(images/boyzeyes/e16.png);
+}
+
+.boyz.eyes17 {
+  background-image:url(images/boyzeyes/e17.png);
+}
+
+.boyz.eyes18 {
+  background-image:url(images/boyzeyes/e18.png);
+}
+
+.boyz.eyes19 {
+  background-image:url(images/boyzeyes/e19.png);
+}
+
+.boyz.eyes20 {
+  background-image:url(images/boyzeyes/e20.png);
+}
+
+.boyz.eyes21 {
+  background-image:url(images/boyzeyes/e21.png);
+}
+
+.boyz.eyes22 {
+  background-image:url(images/boyzeyes/e22.png);
+}
+
+.boyz.eyes23 {
+  background-image:url(images/boyzeyes/e23.png);
+}
+
+.boyz.eyes24 {
+  background-image:url(images/boyzeyes/e24.png);
+}
+
+.boyz.eyes25 {
+  background-image:url(images/boyzeyes/e25.png);
+}
+
+.boyz.eyes26 {
+  background-image:url(images/boyzeyes/e26.png);
+}
+
+.boyz.eyes27 {
+  background-image:url(images/boyzeyes/e27.png);
+}
+
+.boyz.eyes28 {
+  background-image:url(images/boyzeyes/e28.png);
+}
+
+.boyz.eyes29 {
+  background-image:url(images/boyzeyes/e29.png);
+}
+
+.boyz.eyes30 {
+  background-image:url(images/boyzeyes/e30.png);
+}
+
+.boyz.eyes31 {
+  background-image:url(images/boyzeyes/e31.png);
+}
+
+.boyz.eyes32 {
+  background-image:url(images/boyzeyes/e32.png);
+}
+
+.boyz.eyes33 {
+  background-image:url(images/boyzeyes/e33.png);
+}
+
+.boyz.eyes34 {
+  background-image:url(images/boyzeyes/e34.png);
+}
+
+.boyz.eyes35 {
+  background-image:url(images/boyzeyes/e35.png);
+}
+
+.boyz.eyes36 {
+  background-image:url(images/boyzeyes/e36.png);
+}
+
+.boyz.eyes37 {
+  background-image:url(images/boyzeyes/e37.png);
+}
+
+.boyz.eyes38 {
+  background-image:url(images/boyzeyes/e38.png);
+}
+
+.boyz.eyes39 {
+  background-image:url(images/boyzeyes/e39.png);
+}
+
+.boyz.eyes40 {
+  background-image:url(images/boyzeyes/e40.png);
+}
+
+.boyz.eyes41 {
+  background-image:url(images/boyzeyes/e41.png);
+}
+
+.boyz.eyes42 {
+  background-image:url(images/boyzeyes/e42.png);
+}
+
+.boyz.eyes43 {
+  background-image:url(images/boyzeyes/e43.png);
+}
+
+.boyz.eyes44 {
+  background-image:url(images/boyzeyes/e44.png);
+}
+
+.boyz.eyes45 {
+  background-image:url(images/boyzeyes/e45.png);
+}
+
+.boyz.eyes46 {
+  background-image:url(images/boyzeyes/e46.png);
+}
+
+.boyz.eyes47 {
+  background-image:url(images/boyzeyes/e47.png);
+}
+
+.boyz.eyes48 {
+  background-image:url(images/boyzeyes/e48.png);
+}
+
+.boyz.eyes49 {
+  background-image:url(images/boyzeyes/e49.png);
+}
+
+.boyz.eyes50 {
+  background-image:url(images/boyzeyes/e50.png);
+}
+
+.boyz.eyes51 {
+  background-image:url(images/boyzeyes/e51.png);
+}
+
+.boyz.eyes52 {
+  background-image:url(images/boyzeyes/e52.png);
+}
+
+.boyz.eyes53 {
+  background-image:url(images/boyzeyes/e53.png);
+}
+
+.boyz.eyes54 {
+  background-image:url(images/boyzeyes/e54.png);
+}
+
+.boyz.eyes55 {
+  background-image:url(images/boyzeyes/e55.png);
+}
+
+.boyz.eyes56 {
+  background-image:url(images/boyzeyes/e56.png);
+}
+
+.boyz.eyes57 {
+  background-image:url(images/boyzeyes/e57.png);
+}
+
+.boyz.eyes58 {
+  background-image:url(images/boyzeyes/e58.png);
+}
+
+.boyz.eyes59 {
+  background-image:url(images/boyzeyes/e59.png);
+}
+
+.boyz.eyes0 {
+  background-image:url(images/boyzeyes/e0.png);
+}

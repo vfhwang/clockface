@@ -1,0 +1,315 @@
+<html>
+<head>
+  <meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1, user-scalable=0">
+  <link rel="stylesheet" href="backendfiles/clockstyle.css">
+</head>
+
+
+<body>
+
+  <div class="lines">
+<div class="line line1"><div class="digitdash"></div><div class="digitdashb"></div><div class="digitdash"></div></div>
+<div class="line line2"><div class="digitdash"></div><div class="digitdashb"></div><div class="digitdash"></div></div>
+<div class="line line3"><div class="digitdash"></div><div class="digitdashb"></div><div class="digitdash"></div></div>
+<div class="line line4"><div class="digitdash"></div><div class="digitdashb"></div><div class="digitdash"></div></div>
+<div class="line line5"><div class="digitdash"></div><div class="digitdashb"></div><div class="digitdash"></div></div>
+<div class="line line6"><div class="digitdash"></div><div class="digitdashb"></div><div class="digitdash"></div></div>
+  </div>
+
+
+
+<div class="question"><a href="#">?</div>
+<div class="boygirl"><a href="#">F</div>
+<div class="spin"><a href="#">>></div>
+  <div class="face">
+  <div class="eyes"></div>
+  <div class="tongue"></div>
+</div>
+
+<div class="explain">
+    <div class="one"><p>Minutes</p></div>
+    <div class="two"><p>Hours</p></div>
+  </div>
+
+  <div class="spinbox sbm">
+    <div class="lines">
+  <div class="line line1"><div class="digitdash"></div><div class="digitdashb"></div><div class="digitdash"></div></div>
+  <div class="line line2"><div class="digitdash"></div><div class="digitdashb"></div><div class="digitdash"></div></div>
+  <div class="line line3"><div class="digitdash"></div><div class="digitdashb"></div><div class="digitdash"></div></div>
+  <div class="line line4"><div class="digitdash"></div><div class="digitdashb"></div><div class="digitdash"></div></div>
+  <div class="line line5"><div class="digitdash"></div><div class="digitdashb"></div><div class="digitdash"></div></div>
+  <div class="line line6"><div class="digitdash"></div><div class="digitdashb"></div><div class="digitdash"></div></div>
+    </div>
+    <!-- <a href="#"><div class="questionfake">?</div></a>
+    <a href="#"><div class="boygirlfake">M</div></a> -->
+    <a href="#"><div class="xxx">&#x25A0;</div></a>
+    <video width="80%" height="80%" loop preload autoplay muted>
+    <source src="backendfiles/clockfaceboy.mp4" type="video/mp4">
+</video>
+</div>
+
+<div class="spinbox sbf">
+  <div class="lines">
+<div class="line line1"><div class="digitdash"></div><div class="digitdashb"></div><div class="digitdash"></div></div>
+<div class="line line2"><div class="digitdash"></div><div class="digitdashb"></div><div class="digitdash"></div></div>
+<div class="line line3"><div class="digitdash"></div><div class="digitdashb"></div><div class="digitdash"></div></div>
+<div class="line line4"><div class="digitdash"></div><div class="digitdashb"></div><div class="digitdash"></div></div>
+<div class="line line5"><div class="digitdash"></div><div class="digitdashb"></div><div class="digitdash"></div></div>
+<div class="line line6"><div class="digitdash"></div><div class="digitdashb"></div><div class="digitdash"></div></div>
+  </div>
+  <!-- <div class="questionfake">?</div>
+  <div class="boygirlfake">F</div> -->
+  <div class="xxx"><a href="#">&#x25A0;</a></div>
+  <video width="80%" height="80%" loop preload autoplay muted>
+  <source src="backendfiles/clockfacegirl.mp4" type="video/mp4">
+</video>
+</div>
+
+
+
+</body>
+
+
+<script src="backendfiles/jquery-3.1.1.min.js"></script>
+
+<script>
+
+document.addEventListener('contextmenu', event => event.preventDefault());
+
+// addEventListener("click", function() {
+//     var el = document.documentElement,
+//       rfs = el.requestFullscreen
+//         || el.webkitRequestFullScreen
+//         || el.mozRequestFullScreen
+//         || el.msRequestFullscreen
+//     ;
+//
+//     rfs.call(el);
+// });
+
+jQuery.fn.extend({
+    toggleText: function (a, b){
+        var that = this;
+            if (that.text() != a && that.text() != b){
+                that.text(a);
+            }
+            else
+            if (that.text() == a){
+                that.text(b);
+            }
+            else
+            if (that.text() == b){
+                that.text(a);
+            }
+        return this;
+    }
+});
+
+
+// var audio2 = document.getElementById("audio1");
+
+// function pauseAudio() {
+//     audio2.pause();
+// }
+//
+// function playAudio() {
+//     audio2.play();
+// }
+
+$('.boygirl').on('click', function(){
+
+$('.eyes').toggleClass('boyz');
+$('.tongue').toggleClass('boyz');
+$(".boygirl").toggleText('F', 'M');
+
+})
+
+
+$('.question').on('click', function(){
+
+$('.explain').toggleClass('explainvisible');
+$(".question").toggleText('X', '?');
+
+})
+
+$('.explain').on('click', function(){
+  $('.explain').toggleClass('explainvisible');
+  $(".question").toggleText('X', '?');
+})
+
+
+$('.spin').on('click', function(){
+
+  //swap audio in
+  // var playme = document.getElementById('playme'); playme.src='snd/SOUND.WAV'; playme.load();
+
+// pauseAudio()
+
+  setTimeout(function() {
+      $('.spinbox').removeClass('explainvisible');
+      // playAudio();
+    }, 25000)
+
+
+  if ( $('.eyes').hasClass('boyz') ) {
+$('.sbm').addClass('explainvisible')
+}
+
+  else {
+    $('.sbf').addClass('explainvisible');
+  };
+
+  });
+
+
+$('.spinbox').on('click', function(){
+$('.spinbox').removeClass('explainvisible');
+playAudio();
+})
+
+
+
+
+// This gets the hour and adds the appropriate class to the tongue
+
+function theClock(){
+  var theTime = new Date();
+  var theHour = theTime.getHours();
+
+//hours are in 24hr format - if pm, minus 12.
+
+  if (theHour > 12)
+  {
+  theHour = (theHour-12)
+  }
+
+  if (theHour == 0)
+  {
+  theHour = 12
+  }
+
+  //Now we have all times in 1,2,3,4,5,6,7,8,9,10,11,12
+
+  //variables for past and future.
+
+  if (theHour == 1 ){
+      var prevHour = 12;
+  }
+  else{
+      var prevHour = theHour - 1;
+  };
+
+
+  var thenextHour = theHour + 1;
+
+  prevHour = prevHour.toString()
+  theHour = theHour.toString()
+  thenextHour = thenextHour.toString()
+
+//what happens when it turns from 12 o'clock to 1?
+//When it turns to 1 o'clock, the code tries to remove class tongue0
+//If hour = 1, set prevHour to 12
+//If min = 0, set prevhour to 59
+
+  {
+    if (document.images) {
+    var pretongue = new Image();
+    pretongue.src = 'backendfiles/images/tongue/t'+thenextHour+'.png';
+
+    var prebtongue = new Image();
+    prebtongue.src = 'backendfiles/mages/boyztongue/t'+thenextHour+'.png';
+}
+
+    $('.tongue').addClass('tongue'+theHour);
+    $('.tongue').removeClass('tongue'+prevHour);
+
+
+  // This gets the minute and adds the appropriate class to the eyes
+
+
+}
+
+  var theTime = new Date();
+  var theMin = theTime.getMinutes();
+
+
+  if (theMin == 0){
+      var prevMin = 59;
+  }
+  else{
+      var prevMin = theMin - 1;
+  };
+
+  var thenextMin = theMin + 1;
+
+  prevMin = prevMin.toString()
+  theMin = theMin.toString()
+  thenextMin = thenextMin.toString()
+
+
+  {
+    if (document.images) {
+    var preeye = new Image();
+    preeye.src = 'backendfiles/images/eyes/e'+thenextMin+'.png';
+
+    var prebeye = new Image();
+    prebeye.src = 'backendfiles/images/boyzeyes/e'+thenextMin+'.png';
+}
+
+    $('.eyes').addClass('eyes'+theMin);
+    $('.eyes').removeClass('eyes'+prevMin);
+
+  }
+}
+
+
+
+theClock();
+
+window.setInterval(theClock, 5000);
+
+
+// lock scroll position, but retain settings for later
+var scrollPosition = [
+  self.pageXOffset || document.documentElement.scrollLeft || document.body.scrollLeft,
+  self.pageYOffset || document.documentElement.scrollTop  || document.body.scrollTop
+];
+var html = jQuery('html'); // it would make more sense to apply this to body, but IE7 won't have that
+html.data('scroll-position', scrollPosition);
+html.data('previous-overflow', html.css('overflow'));
+html.css('overflow', 'hidden');
+window.scrollTo(scrollPosition[0], scrollPosition[1]);
+
+
+
+//
+// window.setInterval(function(){
+//   var theTime = new Date();
+//   var theHour = theTime.getHours();
+//
+//   if (theHour > 12)
+//   {
+//   theHour = (theHour-12)
+//   }
+//
+//   theHour = theHour.toString()
+//
+//   {
+//     $('.tongue').addClass('tongue'+theHour)
+//   }
+//
+//   // This gets the minute and adds the appropriate class to the eyes
+//
+//   var theTime = new Date();
+//   var theMinutes = theTime.getMinutes();
+//
+//   theMinutes = theMinutes.toString()
+//
+//   {
+//     $('.eyes').addClass('eyes'+theMinutes)
+//   }
+// }, 5000);
+
+</script>
+
+</html>
